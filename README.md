@@ -1,7 +1,7 @@
 squid-deb-proxy Docker container
 ================================
 
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/pmoust/squid-deb-proxy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Based on https://github.com/pmoust/squid-deb-proxy
 
 squid-deb-proxy provides an easy wrapper over squid3 to enable package proxy caching for your organisation/LAN.
 
@@ -11,7 +11,7 @@ Usage:
 
 * On Server / Host:
 
-`docker run --name proxy --rm -v /path/to/cachedir:/cachedir -p PORT:8000 pmoust/squid-deb-proxy &`
+`docker run --name proxy --rm -v /path/to/cachedir:/cachedir -p PORT:8000 tinodidriksen/squid-deb-proxy &`
 
 * On a node
 

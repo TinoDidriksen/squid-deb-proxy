@@ -1,11 +1,14 @@
-FROM ubuntu:trusty
-MAINTAINER Panagiotis Moustafellos <pmoust@gmail.com>
+FROM ubuntu:bionic
+LABEL maintainer="Tino Didriksen <mail@tinodidriksen.com>"
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV LANG=C.UTF-8 \
+	LC_ALL=C.UTF-8 \
+	DEBIAN_FRONTEND=noninteractive \
+	DEBCONF_NONINTERACTIVE_SEEN=true
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-      squid-deb-proxy squid-deb-proxy-client avahi-daemon avahi-utils && \
+    apt-get install -qfy --no-install-recommends \
+      squid-deb-proxy squid-deb-proxy-client && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     ln -sf /cachedir /var/cache/squid-deb-proxy && \
@@ -21,7 +24,6 @@ RUN chmod +x /start.sh
 VOLUME ["/cachedir"]
 
 EXPOSE 8000
-EXPOSE 5353/udp
 
 LABEL SERVICE_NAME="squid-deb-proxy"
 LABEL SERVICE_TAGS="apt-proxy,apt-cache"

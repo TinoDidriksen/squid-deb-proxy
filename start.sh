@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Advertise the availability of the cache.
-avahi-daemon -D
-
 # Necessary because squid forks itself to an unprivileged process.
 chown -R proxy.proxy /cachedir
 chown proxy.proxy /dev/stdout
