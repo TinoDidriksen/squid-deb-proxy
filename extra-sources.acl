@@ -21,3 +21,8 @@ download.rethinkdb.com                  # RethinkDB
 download.opensuse.org                   # OpenSuse Build Service
 packages.elasticsearch.org              # ElasticSearch
 packages.elastic.co                     # ElasticSearch new URL
+.debian.org                             # Debian
+cdn.debian.net
+http.debian.net
+.projectjj.com                          # Apertium
+.apertium.org
